@@ -11,6 +11,7 @@ class Integer{
 		int fib(val);
 	private:
 		int val;
+	};
 
 Integer::Integer(int n){
 	val = n;
