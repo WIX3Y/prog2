@@ -38,23 +38,17 @@ extern "C"{
 	}
 
 //Fibonacci
-int fib(int x){
-   if((x==1)||(x==0)){
-      return(x);
+int fib(int n){
+   if((n==1)||(n==0)){
+      return(n);
    }
 	 else{
-      return(fib(x-1)+fib(x-2));
+      return(fib(n-1)+fib(n-2));
    }
 }
 
 int main() {
-   int x , i=0;
-   cout << "Enter the number of terms of series : ";
-   cin >> x;
-   cout << "\nFibonnaci Series : ";
-   while(i < x) {
-      cout << " " << fib(i);
-      i++;
-   }
+   int n=12;
+      cout << fib(12);
    return 0;
 }
