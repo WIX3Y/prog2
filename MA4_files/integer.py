@@ -17,6 +17,14 @@ class Integer(object):
 
 	def set(self, val):
 		lib.Integer_set(self.obj, val)
-        
+
 	def __del__(self):
 		return lib.Integer_delete(self.obj)
+
+def fib_py(n):
+	if n <= 1:
+		return n
+	else:
+		return(fib_py(n-1) + fib_py(n-2))
+
+print(fib_py(12))
