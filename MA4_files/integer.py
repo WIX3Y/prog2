@@ -28,5 +28,5 @@ def fib_py(n):
 		return(fib_py(n-1) + fib_py(n-2))
 
 f=Integer(12)
-print(f.fib())
+print(f.fib(12))
 print(fib_py(12))
