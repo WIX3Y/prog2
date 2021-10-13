@@ -8,7 +8,7 @@ class Integer{
 		Integer(int);
 		int get();
 		void set(int);
-		int fib(int);
+		int fib();
 	private:
 		int val;
 	};
@@ -17,7 +17,7 @@ Integer::Integer(int n){
 	val = n;
 	}
 
-int Integer::fib(int val){
+int Integer::fib(){
 	if((val==1)||(val==0)){
 		return(val);
 		}
