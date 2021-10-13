@@ -8,12 +8,21 @@ class Integer{
 		Integer(int);
 		int get();
 		void set(int);
+		int fib(val);
 	private:
 		int val;
-	};
 
 Integer::Integer(int n){
 	val = n;
+	}
+
+int Integer::fib(int val){
+	if((val==1)||(val==0)){
+		return(val);
+		}
+	else{
+		return(fib(val-1)+fib(val-2));
+		}
 	}
 
 int Integer::get(){
@@ -23,7 +32,6 @@ int Integer::get(){
 void Integer::set(int n){
 	val = n;
 	}
-
 
 extern "C"{
 	Integer* Integer_new(int n) {return new Integer(n);}
@@ -36,19 +44,3 @@ extern "C"{
 			}
 		}
 	}
-
-//Fibonacci
-int fib(int n){
-   if((n==1)||(n==0)){
-      return(n);
-   }
-	 else{
-      return(fib(n-1)+fib(n-2));
-   }
-}
-
-int main() {
-   int n=12;
-      cout << fib(12);
-   return 0;
-}
