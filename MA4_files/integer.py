@@ -21,12 +21,15 @@ class Integer(object):
 	def __del__(self):
 		return lib.Integer_delete(self.obj)
 
-def fib_py(n):
-	if n <= 1:
-		return n
-	else:
-		return(fib_py(n-1) + fib_py(n-2))
+	def fib():
+		return lib.Integer_fib(self.obj)
+
+	def fib_py(n):
+		if n <= 1:
+			return n
+		else:
+			return(fib_py(n-1) + fib_py(n-2))
 
 f=Integer(12)
-print(f.fib(12))
-print(fib_py(12))
+print(f.fib())
+print(f.fib_py(f.get()))
