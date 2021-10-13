@@ -1,5 +1,7 @@
 #include <cstdlib>
-// Integer class 
+//#include<bits/stdc++.h>
+//using namespace std;
+// Integer class
 
 class Integer{
 	public:
@@ -9,15 +11,15 @@ class Integer{
 	private:
 		int val;
 	};
- 
+
 Integer::Integer(int n){
 	val = n;
 	}
- 
+
 int Integer::get(){
 	return val;
 	}
- 
+
 void Integer::set(int n){
 	val = n;
 	}
@@ -34,3 +36,32 @@ extern "C"{
 			}
 		}
 	}
+
+// fibonacci
+int fib(int n){
+    if (n <= 1)
+        return n;
+    return fib(n-1) + fib(n-2);
+}
+
+int main ()
+{
+    int n = 9;
+    cout << fib(n);
+    getchar();
+    return 0;
+}
+
+//Fibonacci Series using Recursion
+int fib(int n){
+    if (n <= 1)
+        return n;
+    return fib(n-1) + fib(n-2);
+}
+
+int main ()
+{
+    int n = 9;
+    cout << fib(12);
+//    getchar();
+    return 0;
