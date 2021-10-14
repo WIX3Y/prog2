@@ -45,7 +45,8 @@ def dots_in_circle(numb_dots):
 
 
 def monte_carlo():
-
+	pass
+	
 for n in [50, 100, 200, 400]:
 	print(n, ": ", dots_in_circle(n))
 #print("monte carlo: ", monte_carlo())
