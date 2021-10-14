@@ -74,15 +74,15 @@ for n in [1000, 10000, 100000]:
 print("math.pi: ", math.pi)
 #... 1.1
 # 1.2 ...
-def HyperSphere(dim, numb_dots):
-    dots_in_sphere = 0
-	points=[]
-    for i in range(numb_dots):
-		point=np.array(random.uniform(-1.0, 1.0) for d in range(0,dim))
-		points.append(point)
-        if distance <= 1:
-            dots_in_sphere += 1
-		map(lambda dot: dot**2, points)
-    return np.power(2.0, dim) * (count_in_sphere / iterations)
+#def HyperSphere(dim, numb_dots):
+#    dots_in_sphere = 0
+#	points=[]
+#    for i in range(numb_dots):
+#		point=np.array(random.uniform(-1.0, 1.0) for d in range(0,dim))
+#		points.append(point)
+#        if distance <= 1:
+#            dots_in_sphere += 1
+#		map(lambda dot: dot**2, points)
+#    return np.power(2.0, dim) * (count_in_sphere / iterations)
 
 #print(HyperSphere(10, 100000))
