@@ -52,6 +52,6 @@ for n in [50, 100, 200, 400]:
 #print("monte carlo: ", monte_carlo())
 print("math.pi: ", math.pi)
 
-f=Integer(12)
+#f=Integer(12)
 #print(f.fib())
-print(f.fib_py(12))
+#print(f.fib_py())
