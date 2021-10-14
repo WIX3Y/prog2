@@ -67,7 +67,7 @@ def plot_dots(figname, dots_x, dots_y):
 print("1.1")
 for n in [1000, 10000, 100000]:
 	print("n=", n)
-	dots_x, dots_y = dots(numb_dots)
+	dots_x, dots_y = dots(n)
 	print("n_c=", dots_in_circle(dots_x, dots_y))
 	print("4*n_c/n=", 4*dots_in_circle(n)/n, "≈pi\n")
 	plot_dots(str(n)+"dots.png", dots_x, dots_y)
