@@ -1,4 +1,6 @@
 """ Python interface to the C++ Integer class """
+import math
+import random
 import ctypes
 lib = ctypes.cdll.LoadLibrary('./libinteger.so')
 
@@ -30,6 +32,24 @@ class Integer(object):
 			return n
 		else:
 			return(fib_py(n-1) + fib_py(n-2))
+
+def dots_in_circle(numb_dots):
+	dots_in_circle = 0
+	dots = []
+	for i in range(0, numb_dots):
+		dots.append([random.uniform(-1.0, 1.0), random.uniform(-1.0, 1.0)])
+	for dot in dots:
+		if dot[0]**2 + dot[1]**2 <= 1:
+			dots_in_circle += 1
+	return dots_in_circle
+
+
+def monte_carlo():
+
+for n in [50, 100, 200, 400]:
+	print(n, ": ", dots_in_circle(n))
+#print("monte carlo: ", monte_carlo())
+print("math.pi: ", math.pi)
 
 f=Integer(12)
 print(f.fib())
