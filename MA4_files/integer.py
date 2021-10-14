@@ -6,37 +6,38 @@ import numpy as np
 import sys
 import time
 import concurrent.futures as future
-#import ctypes
-#lib = ctypes.cdll.LoadLibrary('./libinteger.so')
 
-#class Integer(object):
-#	def __init__(self, val):
-#		lib.Integer_new.argtypes = [ctypes.c_int]
-#		lib.Integer_new.restype = ctypes.c_void_p
-#		lib.Integer_get.argtypes = [ctypes.c_void_p]
-#		lib.Integer_get.restype = ctypes.c_int
-#		lib.Integer_fib.argtypes = [ctypes.c_void_p,ctypes.c_int]
-#		lib.Integer_set.argtypes = [ctypes.c_void_p,ctypes.c_int]
-#		lib.Integer_delete.argtypes = [ctypes.c_void_p]
-#		self.obj = lib.Integer_new(val)
+import ctypes
+lib = ctypes.cdll.LoadLibrary('./libinteger.so')
 
-#	def get(self):
-#		return lib.Integer_get(self.obj)
+class Integer(object):
+	def __init__(self, val):
+		lib.Integer_new.argtypes = [ctypes.c_int]
+		lib.Integer_new.restype = ctypes.c_void_p
+		lib.Integer_get.argtypes = [ctypes.c_void_p]
+		lib.Integer_get.restype = ctypes.c_int
+		lib.Integer_fib.argtypes = [ctypes.c_void_p]
+		lib.Integer_set.argtypes = [ctypes.c_void_p,ctypes.c_int]
+		lib.Integer_delete.argtypes = [ctypes.c_void_p]
+		self.obj = lib.Integer_new(val)
 
-#	def set(self, val):
-#		lib.Integer_set(self.obj, val)
+	def get(self):
+		return lib.Integer_get(self.obj)
 
-#	def __del__(self):
-#		return lib.Integer_delete(self.obj)
+	def set(self, val):
+		lib.Integer_set(self.obj, val)
 
-#	def fib():
-#		return lib.Integer_fib(self.obj)
+	def __del__(self):
+		return lib.Integer_delete(self.obj)
 
-#	def fib_py(n):
-#		if n <= 1:
-#			return n
-#		else:
-#			return(fib_py(n-1) + fib_py(n-2))
+	def fib():
+		return lib.Integer_fib(self.obj)
+
+	def fib_py(n):
+		if n <= 1:
+			return n
+		else:
+			return(fib_py(n-1) + fib_py(n-2))
 
 # 1.1 ...
 def dots(numb_dots):
