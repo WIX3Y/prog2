@@ -50,7 +50,7 @@ def monte_carlo():
 for n in [50, 100, 200, 400]:
 	print("n=", n)
 	print("n_c=", dots_in_circle(n))
-	print("n_c/n=", dots_in_circle(n)/n)
+	print("4*n_c/n=", 4*dots_in_circle(n)/n)
 #print("monte carlo: ", monte_carlo())
 print("math.pi: ", math.pi)
 
