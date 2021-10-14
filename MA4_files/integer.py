@@ -116,7 +116,7 @@ if __name__ == '__main__':
 # ... 1.2
 # 2 ...
 if __name__ == '__main__':
-	#f=Integer(12)
-	#print(f.fib())
-	#print(f.fib_py())
+	f=Integer(12)
+	print(f.fib())
+	print(f.fib_py())
 # ... 2
