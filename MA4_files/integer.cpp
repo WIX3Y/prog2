@@ -7,8 +7,8 @@ class Integer{
 	public:
 		Integer(int);
 		int get();
+		int fib();
 		void set(int);
-		int fib(int);
 	private:
 		int val;
 		int fib_priv(int);
