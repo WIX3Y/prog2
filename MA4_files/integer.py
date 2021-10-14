@@ -1,6 +1,7 @@
 """ Python interface to the C++ Integer class """
 import math
 import random
+import matplotlib.pyplot as plt
 import ctypes
 lib = ctypes.cdll.LoadLibrary('./libinteger.so')
 
@@ -35,23 +36,25 @@ class Integer(object):
 
 def dots_in_circle(numb_dots):
 	dots_in_circle = 0
-	dots = []
+	dots_x = []
+	dots_y = []
 	for i in range(0, numb_dots):
-		dots.append([random.uniform(-1.0, 1.0), random.uniform(-1.0, 1.0)])
-	for dot in dots:
-		if dot[0]**2 + dot[1]**2 <= 1:
+		dots_x.append(random.uniform(-1.0, 1.0))
+		dots_y.append(random.uniform(-1.0, 1.0))
+	for dot_x, dot_y in zip(dots_x, dots_y):
+		if dot_x**2 + dot_y**2 <= 1:
 			dots_in_circle += 1
 	return dots_in_circle
 
-
-def monte_carlo():
-	pass
+def plot_dots():
+	plt.plot(dots_x, dots_y)
+	plt.savefig("dots.png")
 
 for n in [50, 100, 200, 400]:
 	print("n=", n)
 	print("n_c=", dots_in_circle(n))
 	print("4*n_c/n=", 4*dots_in_circle(n)/n, "\n")
-#print("monte carlo: ", monte_carlo())
+plot_dots()
 print("math.pi: ", math.pi)
 
 #f=Integer(12)
