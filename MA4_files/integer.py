@@ -1,7 +1,9 @@
 """ Python interface to the C++ Integer class """
+import matplotlib
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
 import math
 import random
-import matplotlib.pyplot as plt
 import ctypes
 lib = ctypes.cdll.LoadLibrary('./libinteger.so')
 
@@ -47,7 +49,11 @@ def dots_in_circle(numb_dots):
 	return dots_in_circle
 
 def plot_dots():
-	plt.plot(dots_x, dots_y)
+	for dot_x, dot_y in zip(dots_x, dots_y):
+		if dot_x**2 + dot_y**2 <= 1:
+			plt.plot(dot_x, dot_y, color="red")
+		else:
+			plt.plot(dot_x, dot_y, color="blue")
 	plt.savefig("dots.png")
 
 for n in [50, 100, 200, 400]:
