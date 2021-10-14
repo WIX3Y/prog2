@@ -59,9 +59,9 @@ def dots_in_circle(dots_x, dots_y):
 def plot_dots(figname, dots_x, dots_y):
 	for dot_x, dot_y in zip(dots_x, dots_y):
 		if dot_x**2 + dot_y**2 <= 1:
-			plt.scatter(x=dot_x, y=dot_y, color="red")
+			plt.scatter(dot_x, dot_y, color="red")
 		else:
-			plt.scatter(x=dot_x, y=dot_y, color="blue")
+			plt.scatter(dot_x, dot_y, color="blue")
 	plt.savefig(figname)
 
 if __name__ == '__main__':
@@ -71,7 +71,7 @@ if __name__ == '__main__':
 		dots_x, dots_y = dots(n)
 		print("n_c=", dots_in_circle(dots_x, dots_y))
 		print("4*n_c/n=", 4*dots_in_circle(dots_x, dots_y)/n, "≈pi")
-	#	plot_dots(str(n)+"dots.png", dots_x, dots_y)
+#		plot_dots(str(n)+"dots.png", dots_x, dots_y)
 	print("math.pi: ", math.pi, "\n")
 #... 1.1
 # 1.2 ...
@@ -108,16 +108,37 @@ if __name__ == '__main__':
 	t_start = time.perf_counter()
 	print("dim 11", (2**11) * (HyperSphere(11, 1000000) / 1000000))
 	t_stopp = time.perf_counter()
-	print("time: ", t_stopp-t_start)
+	print("time dim 11, python: ", t_stopp-t_start)
 	print(Volume(11))
 	t_start = time.perf_counter()
 	print((2**2) * (paralell_HyperSphere(11, 1000000, 10) / 1000000))
 	t_stopp = time.perf_counter()
-	print("time: ", t_stopp-t_start)
+	print("time dim 11, c++: ", t_stopp-t_start)
 # ... 1.2
 # 2 ...
 if __name__ == '__main__':
-	f=Integer(12)
-	print(f.fib())
-	print(f.fib_py(f.get()))
+	cpp_fibs = []
+	python_fibs = []
+	ns = []
+	for n in range(30, 32):
+		f=Integer(n)
+
+		t1_start = time.perf_counter()
+		print(f.fib())
+		t1_stopp = time.perf_counter()
+
+		t2_start = time.perf_counter()
+		print(f.fib_py(f.get()))
+		t2_stopp = time.perf_counter()
+
+		cpp_fibs.append(t1_stopp-t1_start)
+		python_fibs.append(t2_stopp-t2_start)
+		ns.append(n)
+
+#	plt.scatter(ns, cpp_fibs, color="red")
+#	plt.scatter(ns, python_fibs, color="green")
+#	plt.savefig("pythonVSc++.png")
+
+#	f=Integer(47)
+#	f.fib()
 # ... 2
