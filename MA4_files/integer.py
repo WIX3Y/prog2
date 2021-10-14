@@ -10,7 +10,7 @@ class Integer(object):
 		lib.Integer_new.restype = ctypes.c_void_p
 		lib.Integer_get.argtypes = [ctypes.c_void_p]
 		lib.Integer_get.restype = ctypes.c_int
-		lib.Integer_fib.argtypes = [ctypes.c_void_p,ctypes.c_int]
+#		lib.Integer_fib.argtypes = [ctypes.c_void_p,ctypes.c_int]
 		lib.Integer_set.argtypes = [ctypes.c_void_p,ctypes.c_int]
 		lib.Integer_delete.argtypes = [ctypes.c_void_p]
 		self.obj = lib.Integer_new(val)
@@ -24,8 +24,8 @@ class Integer(object):
 	def __del__(self):
 		return lib.Integer_delete(self.obj)
 
-	def fib():
-		return lib.Integer_fib(self.obj)
+#	def fib():
+#		return lib.Integer_fib(self.obj)
 
 	def fib_py(n):
 		if n <= 1:
@@ -46,12 +46,12 @@ def dots_in_circle(numb_dots):
 
 def monte_carlo():
 	pass
-	
+
 for n in [50, 100, 200, 400]:
 	print(n, ": ", dots_in_circle(n))
 #print("monte carlo: ", monte_carlo())
 print("math.pi: ", math.pi)
 
 f=Integer(12)
-print(f.fib())
+#print(f.fib())
 print(f.fib_py(f.get()))
