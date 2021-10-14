@@ -38,7 +38,7 @@ class Integer(object):
 		if n <= 1:
 			return n
 		else:
-			return(fib_py(n-1) + fib_py(n-2))
+			return(self.fib_py(n-1) + self.fib_py(n-2))
 
 # 1.1 ...
 def dots(numb_dots):
