@@ -34,7 +34,8 @@ class Integer(object):
 	def fib(self):
 		return lib.Integer_fib(self.obj)
 
-	def fib_py(self, n):
+	def fib_py(self):
+		n = self.get()
 		if n <= 1:
 			return n
 		else:
