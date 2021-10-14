@@ -54,4 +54,4 @@ print("math.pi: ", math.pi)
 
 f=Integer(12)
 #print(f.fib())
-print(f.fib_py(f.get()))
+print(f.fib_py(12))
